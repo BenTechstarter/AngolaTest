@@ -1,0 +1,8 @@
+<!-- src/app/todo-list/todo-list.component.html -->
+<ul>
+  <li *ngFor="let todo of todos">
+    <input type="checkbox" [(ngModel)]="todo.completed" (change)="toggleCompletion(todo)" />
+    <span [ngClass]="{'completed': todo.completed}">{{ todo.title }}</span>
+    <button (click)="deleteTodo(todo)">Delete</button>
+  </li>
+</ul>

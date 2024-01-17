@@ -1,0 +1,10 @@
+/* src/app/app.component.css */
+nav {
+    display: flex;
+    gap: 10px;
+  }
+  
+  router-outlet {
+    margin-top: 20px;
+  }
+  

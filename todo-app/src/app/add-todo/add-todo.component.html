@@ -1,0 +1,20 @@
+<h1>Todo App</h1>
+<nav>
+  <a routerLink="/">Todo List</a>
+  <a routerLink="/add">Add Todo</a>
+</nav>
+<router-outlet></router-outlet>
+
+<app-add-todo></app-add-todo>
+
+<form [formGroup]="addTodoForm" (ngSubmit)="addTodo()">
+    <input
+      formControlName="title"
+      placeholder="Add a new todo"
+      [ngClass]="{ 'is-invalid': form.title.invalid && (form.title.dirty || form.title.touched) }"
+    />
+    <div *ngIf="form.title.invalid && (form.title.dirty || form.title.touched)" class="invalid-feedback">
+      <div *ngIf="form.title.errors.required">Title is required.</div>
+    </div>
+    <button type="submit">Add Todo</button>
+  </form>
